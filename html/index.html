@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa 12</title>
+
+  <!--Conexión al css-->
+  <link rel="stylesheet" href="/css/index.css">
+
+  <!-- Google Fonts -->
+  <!--Google Fonts en el css con @import  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS Carrusel-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="enlace">
+      <img src="/img/Icono de cocina 2.jpg" alt="" class="logo">
+    </a>
+    <h1 class="title">Mesa12</h1>
+    <!-- nav responsive usa javascript app.js -->
+    <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul class="n-bar">
+        <li class="n-item"><a href="/html/index.html">Inicio</a></li>
+        <li class="n-item"><a href="/html/recetas.html">Recetas</a></li>
+        <li class="n-item"><a href="">Bebidas</a></li>
+        <li class="n-item"><a href="/html/news.html">Noticias</a></li>
+        <li class="n-item"><a href="/html/form.html">Formulario</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <!-- MAIN -->
+  <main>
+    <section>
+      <h2 id="main_title">Nuestras recetas</h2>
+
+      <!--Bootstrap-->
+      <section>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/img/comida4.jpg" class="d-block w-100" alt="comida1">
+            </div>
+            <div class="carousel-item">
+              <img src="/img/comida.jpg" class="d-block w-100" alt="comida2">
+            </div>
+            <div class="carousel-item">
+              <img src="/img/comida2.jpg" class="d-block w-100" alt="comida3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section>
+        <h1 id="main_title">¡Bienvenidos a un mundo de Recetas!</h1>
+
+        <p id="paragraphs">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam, omnis natus? Explicabo doloribus hic mollitia
+          itaque consectetur perspiciatis, minus expedita molestiae minima consequatur, eum eaque saepe voluptas ducimus
+          laudantium architecto?
+          Dicta distinctio totam veritatis asperiores reprehenderit ipsam quos quam commodi perferendis voluptates
+          maxime ducimus iusto laudantium fugit, illo officia magni perspiciatis accusamus autem nesciunt. Debitis
+          perferendis quos soluta dolor est!
+        </p>
+      </section>
+
+      <section id="articles_section">
+
+        <article>
+          <h2>Pasteleria</h2>
+          <p>Contenido del artículo.</p>
+          <button><a href="#">+ Info</a></button>
+        </article>
+
+        <article>
+          <h2>Cocina del Mundo</h2>
+          <p>Contenido del artículo.</p>
+          <button><a href="#">+ Info</a></button>
+        </article>
+
+        <article>
+          <h2>Tartas</h2>
+          <p>Contenido del artículo.</p>
+          <button><a href="#">+ Info</a></button>
+        </article>
+      </section>
+  </main>
+  <hr>
+  <!-- FOOTER -->
+  <footer>
+    <article class="footer-container">
+      <article class="footer-content-container">
+        <h3 class="website-logo">Mesa12</h3>
+        <span class="footer-info">+54 011 1212 2121</span>
+        <span class="footer-info">Grupo12@Mesa12.com</span>
+      </article>
+
+      <article class="footer-menus">
+        <article class="footer-content-container">
+          <span class="menu-title">Navegation</span>
+          <a href="#top" class="menu-item-footer">Top</a>
+          <a href="index.html" class="menu-item-footer">Home</a>
+          <a href="recipe.html" class="menu-item-footer">Recipes</a>
+          <a href="drink.html" class="menu-item-footer">Drinks</a>
+          <a href="news.html" class="menu-item-footer">News</a>
+          <a href="form.html" class="menu-item-footer">Form</a>
+        </article>
+        <article class="footer-content-container">
+          <span class="menu-title">legal</span>
+          <a href="#" class="menu-item-footer">Privacy Policy</a>
+          <a href="#" class="menu-item-footer">Cookies</a>
+          <a href="#" class="menu-item-footer">Legal Advice</a>
+        </article>
+      </article>
+
+      <article class="footer-content-container">
+        <span class="menu-title">follow us</span>
+        <article class="social-container">
+          <a href="facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+          <a href="instagram.com" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="whatsapp.com" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="pinterest.com" target="_blank" class="social-link"><i class="fa-brands fa-pinterest"></i></a>
+        </article>
+      </article>
+    </article>
+    <article class="copyright-container">
+      <span class="copyright">Copyright 2021, itskrey.com. All rights reserved.</span>
+    </article>
+  </footer>
+</body>
+
+</html>
