@@ -197,19 +197,19 @@ header{
     font-size: 400%;
 }
 
-#seccion_1{
+#seccion-1{
     text-align: center;
     margin-bottom: 2rem;
     padding: 1%;
     
 }
 
-#seccion_1 h2{
+#seccion-1 h2{
     font-size: 2.5rem;
     margin-bottom: 2%;
 }
 
-#seccion_1 p{
+#seccion-1 p{
     font-size: 1.3rem;
     
     border: solid 3px black;
@@ -220,57 +220,57 @@ header{
 
 }
 
-#seccion_1 img{
+#seccion-1 img{
     width: 60%;
     margin: 2rem;
     
 }
 
-#seccion_2 {
+#seccion-2 {
     margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: rgba(222, 184, 135, 0.66);
     border: solid 3px black;
 }
 
-#seccion_2 h3{
+#seccion-2 h3{
     font-size: 250%;
     margin-left: 4%;
     font-family: 'Delicious Handrawn', cursive;
 }
 
-#seccion_2 ul{
+#seccion-2 ul{
     font-size: 1.3rem;
     font-family: 'Roboto Serif', serif;
     margin: 2%;
 }
 
 
-#seccion_3{
+#seccion-3{
     background-color: rgba(222, 184, 135, 0.66);
     border: solid 3px black;
 }
 
-#seccion_3 h2{
+#seccion-3 h2{
     font-size: 400%;
     margin: 3%;
     text-align: center;
 
 }
 
-#seccion_3 img{
-    width: 70%;
-    margin-left: 12rem;
-    margin-bottom: 2rem;
+#seccion-3 img{
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2%;
 }
 
-#seccion_3 h3{
+#seccion-3 h3{
     font-size: 250%;
     margin-left: 4%;
     font-family: 'Delicious Handrawn', cursive;
 }
 
-#seccion_3 p{
+#seccion-3 p{
     font-size: 1.3rem;
     margin: 1rem;
     font-family: 'Roboto Serif', serif;
