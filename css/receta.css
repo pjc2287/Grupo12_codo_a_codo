@@ -243,6 +243,7 @@ header{
     font-size: 1.3rem;
     font-family: 'Roboto Serif', serif;
     margin: 2%;
+    list-style: none;
 }
 
 
@@ -275,6 +276,7 @@ header{
     margin: 1rem;
     font-family: 'Roboto Serif', serif;
 }
+
 
 
 /* ----------  ---------- Footer  ---------- ----------*/
