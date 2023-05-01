@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+
 async function getInfoReceta() {
 	var url = `https://www.themealdb.com/api/json/v1/1/search.php?s=Big%20Mac`
 	const response = await fetch(url);     // se conecta al endpoint con la url
