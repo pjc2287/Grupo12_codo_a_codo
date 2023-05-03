@@ -227,6 +227,7 @@ nav .n-bar .n-item {
    .imagen {
     width: 15rem;
     height: 15rem;
+    border-radius: 5px;
    }
 
   #contenedor-imagenes h3{
