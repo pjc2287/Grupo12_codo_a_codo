@@ -1,8 +1,25 @@
 // se utiliza para cargar primero el documento html y despues la api
 document.addEventListener('DOMContentLoaded', () => {
 	getInfoReceta();
+	getListRecetasRandom().then(meals => {
+		console.log(meals);
+	});
 
-})
+});
+
+
+
+
+
+// recuperamos el querystring
+const querystring = window.location.search
+//console.log(querystring) // '?s=Big%20Mac'
+
+// usando el querystring, creamos un objeto del tipo URLSearchParams
+const params = new URLSearchParams(querystring)
+
+// recuperamos el valor del parámetro "s"
+const query = params.get('s') // "Big Mac"
 
 
 async function getInfoReceta() {
@@ -51,6 +68,37 @@ async function getInfoReceta() {
 
 	});
 }
+
+
+
+function getListRecetasRandom() {
+	const promises = [];
+
+	for (let i = 0; i < 10; i++) {
+		promises.push(fetch("https://www.themealdb.com/api/json/v1/1/random.php"));
+	}
+
+	return Promise.all(promises)
+		.then(responses => Promise.all(responses.map(response => response.json())))
+		.then(data => {
+			const meals = [];
+
+			data.forEach(response => {
+				const meal = response.meals[0];
+
+				if (!meals.some(m => m.idMeal === meal.idMeal)) {
+					meals.push(meal);
+				}
+			});
+
+			return meals.slice(0, 10);
+		});
+}
+
+
+
+
+
 
 
 /*async function traductor(texto) {

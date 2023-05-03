@@ -202,6 +202,9 @@ nav .n-bar .n-item {
 }
 
 
+
+
+
 /* -------------------- Main  --------------------*/
 
 #main {
@@ -293,6 +296,38 @@ nav .n-bar .n-item {
   margin: 1rem;
   font-family: 'Roboto Serif', serif;
 }
+
+/*movil responsive*/
+@media (max-width: 480px) {
+  #seccion-1 img {
+    width: 80%;
+    
+  
+  }
+
+  #seccion-3 img {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+  }
+
+}
+/*tablet responsive*/
+@media (min-width: 481px) and (max-width: 1024px){
+  #seccion-1 img {
+    width: 50%;
+    
+  
+  }
+
+  #seccion-3 img {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 2%;
+  }
+}
+
+
 
 
 
