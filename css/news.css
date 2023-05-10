@@ -1,141 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+:root{
+  /* colores */
+  --colorPrimario: #ff9a00;
+  --colorSecundario: #dfdbb6;
+  --colorTercero: #fff;
+  --colorMenu: #000;
+  --colorFont: #000;
+  --colorLink: #dfdbb6;
+  --colorHover: #fff;
+  /* tamaño fuente header */ /*responsive*/
+  --sizeFontNavTitle: 96px;
+  --sizeFontNavBar: 26px;
+  --sizeFontToggle: 50px;
+  /* tamaño fuente sections */
+  --sizeFontTitle: 5rem;
+  --sizeFontSub: 2.5rem;
+  --sizeFontPBg: 2rem;
+  --sizeFontPMd: 1.5rem;
+  --sizeFontPSm: 1rem;
+  /* fuente y weight */
+  --fontFamilyMesa12: 'DynaPuff', cursive;
+  --weightFontMesa12: 600;
+  --fontFamilyTitle: 'Delicious Handrawn', cursive;
+  --weightFontTitle: 400;
+  --fontFamilySub: 'Yanone Kaffeesatz', sans-serif;
+  --weightFontSub: 200;
+  --fontFamilyP: 'Oswald', sans-serif;
+  --weightFontP: 200;
+  /* padding */
+  --paddingSections: 3vw;
+  
+}
+/* text media query */
+@media(max-width: 1200px){
+  html{
+    font-size: 85%;
+  }
+}
+@media(max-width: 1024px){
+  html{
+    font-size: 75%;
+  }
+}
+@media(max-width: 480px){
+  html{
+    font-size: 65%;
+  }
+} 
+  
+
+
+
+/* -------------- */
+/* -----HTML----- */
+/* -------------- */
 
 *{
-  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
 }
 
-
 /* ------------ */
 /* ---HEADER--- */
 /* ------------ */
 /* navegador con logo, titulo animado que se oculta y navegador responsive */
-
+/* header contiene a .enlace . title y n-bar */
+/* toggle oculto animacion con js .checkbtn #check */
+/* n bar contiene n-item*/
 header{
   z-index: 10;
+
   position: sticky;
   top: 0;
+
+  display: flex; 
   align-items: center;
-  justify-content: space-around;
-  display: flex;
-  background-color: #ff9a00;
-  }
+
+  justify-content: space-around; /* espacio entre .enlace .title .n-bar*/
   
-  /* logo */
-  .enlace{
-  padding: 10px;
-  }
+  background-color: var(--colorPrimario);
+
+  box-shadow: 0px 10px 31px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 10px 31px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 31px 0px rgba(0,0,0,0.75); /* shadow al header flotante*/
+}
   
-  /* animated title */
-  .title{
-  font-family: 'DynaPuff', cursive;
+/* --logo-- */
+.enlace{
+ padding: 10px;
+}
+  
+/* --animated title-- */
+.title{
+  font-family: var(--fontFamilyMesa12);
+  font-weight: var(--weightFontMesa12);
   letter-spacing: 0.5vw;
-  font-size: 90px;
+  font-size: var(--sizeFontNavTitle);
   color: transparent;
-  background-image: linear-gradient(#fff, #dfdbb6);
+  background-image: linear-gradient(#fff, var(--colorSecundario) );
   background-repeat: no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   background-position: -320px 0;
   animation: backcolor 3s linear infinite alternate;
-  }
-  /* damos a "backcolor" una animacion */
-  @keyframes backcolor{
+}
+
+/* damos a "backcolor" una animacion */
+@keyframes backcolor{
   100%{
     background-position: 0px 0;
   }
-  }
-  /* navegador */
-  nav{
+}
+
+/* navegador */
+nav{
   height: 110px;
   width: 100%;
-  }
-  .enlace{
+}
+.enlace{
   padding: 10px;
-  }
-  .logo{
+}
+.logo{
   height: 100px;
   margin: 10px 40px;
-  }
-  nav .n-bar{
+}
+nav .n-bar{
   float: right;
   margin-right: 20px;
-  }
-  nav .n-bar .n-item{
+}
+nav .n-bar .n-item{
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
-  }
-  /* nuevos botones */
-  .n-item a {
-    font-size: 22px;
-    color: #e1e1e1;
-    font-family: inherit;
-    font-weight: 800;
-    cursor: pointer;
-    position: relative;
-    border: none;
-    background: none;
-    text-transform: uppercase;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: color;
-  }
+}
+
+/* nuevos botones hover subrayado creciente */
+.n-item a {
+  font-size: var(--sizeFontNavBar);
+  font-weight: var(--weightFontTitle);
+  color: var(--colorLink);
+  font-family: var(--fontFamilyP);
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
   
-  .n-item a:focus,
-  .n-item a:hover {
-    color: #fff;
-  }
+.n-item a:focus,
+.n-item a:hover {
+  color: var(--colorHover);
+}
   
-  .n-item a:focus:after,
-  .n-item a:hover:after {
-    width: 100%;
-    left: 0%;
-  }
+.n-item a:focus:after,
+.n-item a:hover:after {
+  width: 100%;
+  left: 0%;
+}
   
-  .n-item a:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background-color: #fff;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
-  }
+.n-item a:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--colorHover);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
   
+/*--toggle js-- */  
+.checkbtn{
   
-  .checkbtn{
-  font-size: 30px;
-  color: white;
+  color: var(--colorLink);
   float: right;
   line-height: 80px;
   margin-right: 40px;
   cursor: pointer;
   display: none;
-  }
-  #check{
+}
+#check{
   display: none;
-  }
+}
+.fa-bars{
+  font-size: var(--sizeFontToggle);
+}
   
-  /* RESPONSIVE NAV */
-  /* titulo oculto en pantalla mediana */
-  @media(max-width: 1080px){
+/*-- RESPONSIVE NAV-- */
+/* titulo oculto en pantalla mediana */
+@media(max-width: 1200px){
   .title{
     display: none;
   }
-  }
-  /* navegador oculto en pantalla pequeña*/
-  @media(max-width: 912px){
+}
+/* navegador oculto en pantalla pequeña*/
+@media(max-width: 768px){
   .title{
     display: none;
   }
@@ -150,8 +224,8 @@ header{
       position: fixed;
       width: 100%;
       height: 100vh;
-      background: #000;
-      color: #fff;
+      background: var(--colorMenu);
+      color: var(--colorLink);
       top: 130px;
       left: -100%;
       text-align: center;
@@ -172,7 +246,23 @@ header{
   #check:checked ~ .n-bar{
       left: 0;
   }
-  } 
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -182,49 +272,88 @@ header{
 
 
 
-.container{
+.container-news{
     width: 100%;
     margin: 0;
-    background-color: #dfdbb6;
-    padding: 30px;
+    background-color: var(--colorSecundario);
+    /* padding: var(--paddingSections); */
 }
+
+.header-item{
+  width: 100%;
+  height: 450px;
+  
+  background-image: url(/img/wintery-sunburst.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  padding: var(--paddingSections);
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+  margin-bottom: 100px;
+}
+
 .tittle-pg{
   display: flex;
   position: relative;
-  left: 25vw;
   justify-content: center;
   align-items: center;
-    text-align: center;
-    font-size: 50px;
-    color:#000 ;
-  
+  text-align: center;
+  font-family: var(--fontFamilyTitle);
+  font-size: var(--sizeFontTitle);
+  font-weight: var(--weightFontTitle);
+  color: var(--colorFont);
   border-radius: 30% 70% 16% 84% / 30% 50% 50% 70% ;
-  background-color: #ff9a00;  
-    width: 50%;
-    
+  background-color: var(--colorPrimario);  
+  margin-bottom: 20px;  
 }
-.header{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+.sub-pg{
+  font-family: var(--fontFamilySub);
+  font-size: var(--sizeFontSub);
+  font-weight: var(--weightFontSub);
+  margin-bottom: 20px;
 }
+
 .search-item{
-    text-align: center;
-    height: 50px;
-    margin: 10px 0 5px;
+  text-align: center;
+  height: 100px;
+  margin: 10px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
-.search-item .cat{
-    display: inline-block;
-    background-color: #000;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 30px;
-    margin: 0 5px;
-    cursor: pointer;
+
+/* prueba botones */
+/* nuevo */
+.cat {
+  background: var(--colorPrimario);
+  font-family: var(--fontFamilySub);
+  font-size: var(--sizeFontPMd);
+  padding: 0.6em 1.3em;
+  border: 3px solid var(--colorMenu);
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  margin: 5px;
+  cursor: pointer;
 }
-.search-item .cat:hover{
-    color: #ff9a00;
+
+.cat:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
 }
+
+.cat:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+/* search bar */
 .search-bar{
   display: flex;
   justify-content: center;
@@ -245,25 +374,32 @@ header{
     border-radius: 30px;
     border: 2px solid #ccc;
 }
+
+
+
+/* card noticias */
+
 .container-noticias{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap:30px;
-    padding-bottom: 20px;
+  padding: var(--paddingSections);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap:30px;
+  padding-bottom: 20px;
 }
 .container-noticias .item{
+  font-family: var(--fontFamilyP);
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
-    background-color: #eee;
-    max-width: 360px;
-    height: 500px;
-    margin: auto;
-    border:2px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    cursor: pointer;
-    transition: .3s;
+  background-color: #eee;
+  max-width: 360px;
+  height: 500px;
+  margin: auto;
+  border:2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: .3s;
 }
 .item .top{
   height: 100px;
@@ -284,12 +420,19 @@ header{
     width: 100%;
     
 }
-.container-noticias #btnSiguiente{
-    cursor: pointer;
-}
-.container-noticias #btnSiguiente:hover{
-    color: #fc0505;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -306,10 +449,12 @@ footer{
   left: 0;
   height: fit-content;
   width: 100%;
+  padding: var(--paddingSections);
   display: flex;
   flex-direction: column;
-  color: #dfdbb6;
-  background: #000;
+  color: var(--colorSecundario);
+  background: var(--colorMenu);
+  font-family: var(--fontFamilyP);
 }
 
 .copyright-container{
@@ -317,13 +462,12 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: var(--borderOff);
 }
 
 .copyright{
-  font-size: 12px;
+  font-size: var(--sizeFontPSm);
   opacity: 0.7;
-  font-weight: 400;
   padding: 10px 0;
 }
 
@@ -352,27 +496,27 @@ footer{
 
 footer .website-logo{
   padding: 1vw;
-  font-family: 'DynaPuff', cursive;
+  font-family: var(--fontFamilyMesa12);
   color: transparent;
-  -webkit-text-stroke: 1px #dfdbb6;
+  -webkit-text-stroke: 1px var(--colorSecundario);
   margin-bottom: .5rem;
-  font-size: calc(1vw + 24px);
+  font-size: var(--sizeFontSub);
 }
 
 .footer-info, .menu-item-footer{
   margin: 0.2rem 0;
   opacity: 0.7;
-  color: white;
+  color: var(--colorLink);
   text-decoration: none;
   transition: 0.5s;
 }
 
 .menu-item-footer:hover{
-  opacity: 1;
+  color: var(--colorHover);
 }
 
 .menu-title{
-  font-size: var(--medium-text-font);
+  font-size: var(--sizeFontPMd);
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -388,15 +532,18 @@ footer .website-logo{
 }
 
 .social-link{
-  font-size: 50px;
   height: 100%;
   width: 50px;
   margin: 0 1rem;
-  color: #dfdbb6;
+  color: var(--colorLink);
+}
+
+.fa-brands{
+  font-size: var(--sizeFontSub);
 }
 
 .social-link:hover{
-  color: #fff;
+  color: var(--colorHover);
 }
 
 /*MEDIA QUERY*/
