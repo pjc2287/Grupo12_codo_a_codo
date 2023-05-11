@@ -5,36 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
-    <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
     <!-- Icono en pestaña -->
+    <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
+    <!-- pagina de estilos -->
     <link rel="stylesheet" href="../css/form.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
+    <!-- CDN de VUE para importar header y footer de headfoot.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     
     <!--Google Fonts en el css con @import  -->
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <a href="index.html" class="enlace">
-            <img src="../img/ico/ico.jpg" alt="" class="logo">
-        </a>
-        <h1 class="title">Mesa12</h1>
-        <!-- nav responsive usa javascript app.js -->
-        <nav>
-          <input type="checkbox" id="check">
-          <label for="check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-          </label>
-          <ul class="n-bar">
-            <li class="n-item"><a href="index.html">Home</a></li>
-            <li class="n-item"><a href="recipe.html">Recetas</a></li>
-            <li class="n-item"><a href="drink.html">Cocktails</a></li>
-            <li class="n-item"><a href="news.html">Noticias</a></li>
-            <li class="n-item"><a href="form.html">Contacto</a></li>
-          </ul>
-        </nav>
-      </header>
+    <!-- section en el js. -->
+    <section id="app">
+    <!-- <encabezado> en el js para traer header -->
+    <encabezado></encabezado>
     
       <!-- FORMULARIO -->
       <!-- Titulo, texto a la izquierda y form, responsive -->
@@ -130,48 +116,9 @@
         </ul>
     </section>
 
-    
-       <!-- FOOTER -->
-       <footer>
-        <article class="footer-container">
-            <article class="footer-content-container">
-                <h3 class="website-logo">Mesa12</h3>
-                <span class="footer-info">+54 011 1212 2121</span>
-                <span class="footer-info">Grupo12@Mesa12.com</span>
-            </article>
-  
-            <article class="footer-menus">
-                <article class="footer-content-container">
-                    <span class="menu-title">Navegacion</span>
-                    <a href="#top" class="menu-item-footer">Top</a>
-                    <a href="index.html" class="menu-item-footer">Home</a>
-                    <a href="recipe.html" class="menu-item-footer">Recetas</a>
-                    <a href="drink.html" class="menu-item-footer">Coctails</a>
-                    <a href="news.html" class="menu-item-footer">Noticias</a>
-                    <a href="form.html" class="menu-item-footer">Contacto</a>
-                </article>
-                <article class="footer-content-container">
-                    <span class="menu-title">Legal</span>
-                    <a href="#" class="menu-item-footer">Privacidad</a>
-                    <a href="#" class="menu-item-footer">Cookies</a>
-                    <a href="#" class="menu-item-footer">Legales</a>
-                </article>
-            </article>
-            
-            <article class="footer-content-container">
-                <span class="menu-title">Redes</span>
-                <article class="social-container">
-                    <a href="facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="instagram.com" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="whatsapp.com" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="pinterest.com" target="_blank" class="social-link"><i class="fa-brands fa-pinterest"></i></a>
-                </article>
-            </article>
-        </article>
-        <article class="copyright-container">
-            <span class="copyright">Copyright 2023, mesa12.com. Todos los derechos reservados.</span>
-        </article>
-    </footer>
+    <!-- <pie> en el js para importar footer  -->
+       <pie></pie>
+    </section>
 </body>
 </html>
 
@@ -182,6 +129,9 @@
 
 <!-- funcion validacion cuestionario -->
 <script src="../js/form-validacion.js"></script>
+
+<!-- funcion para importar header y footer con headfoot.js y VUE -->
+<script src="../js/headfoot.js"></script>
 
 
 
