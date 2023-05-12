@@ -5,7 +5,7 @@ const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
 
 // Función para mostrar la información de una comida en el HTML
 function mostrarComida(comida) {
-  const mealSection = document.getElementsById('contenedor-imagenes');
+  
   mealSection.classList.add('meal');
 
   const mealImg = document.getElementsById('imagen');
@@ -21,16 +21,21 @@ function mostrarComida(comida) {
 }
 
 // Hacer múltiples solicitudes a la API para obtener varias comidas aleatorias
-const numComidas = 12; // Número de comidas a mostrar
-
-for (let i = 0; i < numComidas; i++) {
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const comida = data.meals[0];
-      mostrarComida(comida);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+// Número de comidas a mostrar
+function listaRandom () {
+  for (let i = 0; i < 12; i++) {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        console.log (data)
+        const comida = data.meals[0];
+        mostrarComida(comida);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
 }
+
+listaRandom ()
+console.log (listaRandom())
