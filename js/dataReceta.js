@@ -1,34 +1,36 @@
 // se utiliza para cargar primero el documento html y despues la api
 document.addEventListener('DOMContentLoaded', () => {
-	getInfoReceta();
-	getListRecetasRandom().then(meals => {
-		console.log(meals);
-	});
+	// recuperamos el querystring
+	const querystring = window.location.search
+	//console.log(querystring) // '?i=12345'
+
+	// usando el querystring, creamos un objeto del tipo URLSearchParams
+	const params = new URLSearchParams(querystring)
+
+	// recuperamos el valor del parámetro "i"
+	const query = params.get('i') // "12345"
+	console.log(query);
+	
+	if (query != null) {
+		if (query < 20000) {
+			getInfoBebida(query);
+		} 
+		else {
+			getInfoReceta(query);
+		}
+	}
+	
+	
 
 });
 
 
-
-
-
-// recuperamos el querystring
-const querystring = window.location.search
-//console.log(querystring) // '?s=Big%20Mac'
-
-// usando el querystring, creamos un objeto del tipo URLSearchParams
-const params = new URLSearchParams(querystring)
-
-// recuperamos el valor del parámetro "s"
-const query = params.get('s') // "Big Mac"
-
-
-async function getInfoReceta() {
-	var url = `https://www.themealdb.com/api/json/v1/1/search.php?s=Big%20Mac`
+async function getInfoReceta(query) {
+	var url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${query}`;
 	const response = await fetch(url);     // se conecta al endpoint con la url
 	const data = await response.json();    //guarda los datos que devuelve el endpoint y los trasforma en json
-	//console.log(data.meals);
+	console.log(data);
 	data.meals.forEach(datos => {
-		console.log(datos);
 
 		//nombre de la receta
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
@@ -69,35 +71,47 @@ async function getInfoReceta() {
 	});
 }
 
+async function getInfoBebida(query) {
+	var url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${query}`;
+	const response = await fetch(url);     // se conecta al endpoint con la url
+	const data = await response.json();    //guarda los datos que devuelve el endpoint y los trasforma en json
+	data.drinks.forEach(datos => {
+		console.log(datos);
 
+		//nombre de la receta
+		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
+			let nombReceta = document.querySelectorAll('.nomb-receta')[index].textContent = datos.strDrink;
+			//traductor(nombReceta);
+		}
 
-function getListRecetasRandom() {
-	const promises = [];
+		// preparacion de la receta
+		document.querySelector('.preparacion-receta').textContent = datos.strInstructions;
 
-	for (let i = 0; i < 10; i++) {
-		promises.push(fetch("https://www.themealdb.com/api/json/v1/1/random.php"));
-	}
+		//lista de los ingredientes de la receta
+		const ingredients = [];
+		for (const key in datos) {
+			if (key.includes("strIngredient") || key.includes("strMeasure")) {
+				ingredients.push(datos[key]);
+			}
+		}
 
-	return Promise.all(promises)
-		.then(responses => Promise.all(responses.map(response => response.json())))
-		.then(data => {
-			const meals = [];
+		console.log(ingredients);
+		const contenedorUl = document.querySelector('.list-ingredientes');
+		
+		for (let index = 0; index < 15; index++) {
+			if (ingredients[index] != null) {
+				const elementoLi = document.createElement('li');
+				elementoLi.textContent = ingredients[15 + index] + ' ' + ' ' + ingredients[index]
+				contenedorUl.appendChild(elementoLi);
+			}
+		}
 
-			data.forEach(response => {
-				const meal = response.meals[0];
-
-				if (!meals.some(m => m.idMeal === meal.idMeal)) {
-					meals.push(meal);
-				}
-			});
-
-			return meals.slice(0, 10);
-		});
+		// imagen de la receta
+		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
+			document.querySelectorAll('.img-receta')[index].setAttribute("src", datos.strDrinkThumb);
+		}
+	});
 }
-
-
-
-
 
 
 

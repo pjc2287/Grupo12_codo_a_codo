@@ -247,87 +247,71 @@ nav .n-bar .n-item {
 }
 
 #seccion-2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
   background-color: rgba(222, 184, 135, 0.66);
   border: solid 3px black;
 }
 
-#seccion-2 h3 {
-  font-size: 250%;
-  margin-left: 4%;
+.seccion2-divIngredientes{
+  padding: 1%;
+  margin: 1%;
+  
+}
+
+.seccion2-divIngredientes h2{
   font-family: 'Delicious Handrawn', cursive;
-}
-
-#seccion-2 ul {
-  font-size: 1.3rem;
-  font-family: 'Roboto Serif', serif;
-  margin: 2%;
-  list-style: none;
-}
-
-
-#seccion-3 {
-  background-color: rgba(222, 184, 135, 0.66);
-  border: solid 3px black;
-}
-
-#seccion-3 h2 {
-  font-size: 400%;
-  margin: 3%;
+  font-size: 250%;
   text-align: center;
+  margin-bottom: 10%;
+}
+
+.seccion2-divIngredientes ul{
+  font-family: 'Roboto Serif', serif;
+  font-size: 120%;
+}
+
+.seccion2-divPreparacion{
+  padding: 2%;
+  margin: 1%;
 
 }
 
-#seccion-3 img {
-  width: 30%;
-  margin-left: 35%;
-  margin-bottom: 2%;
-}
-
-#seccion-3 h3 {
+.seccion2-divPreparacion h2{
   font-size: 250%;
-  margin-left: 4%;
   font-family: 'Delicious Handrawn', cursive;
+  margin-bottom: 2%;
+  text-align: center;
 }
-
-#seccion-3 p {
-  font-size: 1.3rem;
-  margin: 1rem;
+.seccion2-divPreparacion  p{
+  font-size: 140%;
   font-family: 'Roboto Serif', serif;
 }
+
 
 /*movil responsive*/
 @media (max-width: 480px) {
   #seccion-1 img {
     width: 80%;
+
+  }
+  #seccion-2 {
+    display: block;
     
-  
   }
-
-  #seccion-3 img {
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
-  }
-
 }
 /*tablet responsive*/
 @media (min-width: 481px) and (max-width: 1024px){
   #seccion-1 img {
     width: 50%;
-    
   
   }
-
-  #seccion-3 img {
-    width: 50%;
-    margin-left: 25%;
-    margin-bottom: 2%;
+  #seccion-2 {
+    display: block;
+    
   }
+
 }
-
-
 
 
 
