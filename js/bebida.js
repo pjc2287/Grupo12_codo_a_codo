@@ -53,3 +53,7 @@ async function getListaDeCard() {
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main

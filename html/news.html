@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesa 12</title>
-
-    <!-- Conexión al css -->
-    <link rel="stylesheet" href="/css/news.css">
-
+    <title>Noticias</title>
+    <!-- Icono en pestaña -->
+    <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
+    <!-- Css estilos -->
+    <link rel="stylesheet" href="../css/news.css">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
+    <!-- CDN para VUE  -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <!--Google Fonts en el css con @import  -->
 </head>
-
 <body>
+<<<<<<< HEAD
     <!-- HEADER -->
     <header>
         <a href="index.html" class="enlace">
@@ -42,66 +44,41 @@
     <section id="top" class="container">
         <h1 class="tittle-pg">News</h1>
         <section class="header">
+=======
+    <section id="app">
+        <encabezado></encabezado>
+
+
+<!-- NEWS APPI -->
+    <section id="top" class="container-news">
+        
+        <section class="header-item">
+            <h2 class="tittle-pg">Noticias</h2>
+            <h3 class="sub-pg">Lorem ipsum dolor sit amet.</h3>
+>>>>>>> main
             <nav class="search-item">
                 <span class="cat" onclick="buscar('Comida')">Comida</span>
                 <span class="cat" onclick="buscar('Restaurantes')">Restaurantes</span>
                 <span class="cat" onclick="buscar('Nutrición')">Nutrición</span>
-                <span class="cat" onclick="buscar('Bebidas')">Bebidas</span>
+                <span class="cat" onclick="buscar('Celiacos')">Celíacos</span>
                 <span class="cat" onclick="buscar('Veganos')">Veganos</span>
             </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Qué desea buscar" id="search">
-                <button class="btn" onclick="buscarTema()">Buscar</button>
-            </div>
+            
         </section>
-        <article class="container-noticias">
+            <article class="container-noticias">
         </article>
     </section>
-    <hr>
-    <!-- FOOTER -->
-    <footer>
-        <article class="footer-container">
-            <article class="footer-content-container">
-                <h3 class="website-logo">Mesa12</h3>
-                <span class="footer-info">+54 011 1212 2121</span>
-                <span class="footer-info">Grupo12@Mesa12.com</span>
-            </article>
 
-            <article class="footer-menus">
-                <article class="footer-content-container">
-                    <span class="menu-title">Navegation</span>
-                    <a href="#top" class="menu-item-footer">Top</a>
-                    <a href="index.html" class="menu-item-footer">Home</a>
-                    <a href="recipe.html" class="menu-item-footer">Recipes</a>
-                    <a href="drink.html" class="menu-item-footer">Drinks</a>
-                    <a href="news.html" class="menu-item-footer">News</a>
-                    <a href="form.html" class="menu-item-footer">Form</a>
-                </article>
-                <article class="footer-content-container">
-                    <span class="menu-title">legal</span>
-                    <a href="#" class="menu-item-footer">Privacy Policy</a>
-                    <a href="#" class="menu-item-footer">Cookies</a>
-                    <a href="#" class="menu-item-footer">Legal Advice</a>
-                </article>
-            </article>
 
-            <article class="footer-content-container">
-                <span class="menu-title">follow us</span>
-                <article class="social-container">
-                    <a href="facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="instagram.com" target="_blank" class="social-link"><i
-                            class="fa-brands fa-instagram"></i></a>
-                    <a href="whatsapp.com" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="pinterest.com" target="_blank" class="social-link"><i
-                            class="fa-brands fa-pinterest"></i></a>
-                </article>
-            </article>
-        </article>
-        <article class="copyright-container">
-            <span class="copyright">Copyright 2021, itskrey.com. All rights reserved.</span>
-        </article>
-    </footer>
-    
+        <pie></pie>
+    </section>
 </body>
-<script src="/js/app-news.js"></script>
 </html>
+
+<!-- js -->
+<!-- api de noticias -->
+<script src="../js/news-api.js"></script>
+<!-- funcion para menu de hamburguesa -->
+<script src="../js/app-toggle.js"></script>
+<!-- funcion para importar header y footer de headfoot.js con VUE -->
+<script src="../js/headfoot.js"></script>

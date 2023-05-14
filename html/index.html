@@ -6,10 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesa 12</title>
+  <!-- Icono en pestaña -->
+  <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
 
   <!--Conexión al css-->
-  <link rel="stylesheet" href="/css/index.css">
-
+  <link rel="stylesheet" href="../css/index.css">
+ 
   <!-- Google Fonts -->
   <!--Google Fonts en el css con @import  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +22,22 @@
   <script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
 
   <!-- Bootstrap CSS Carrusel-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- JavaScript de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--Conexión al css-->
+  <link rel="stylesheet" href="/css/index.css">
+
+  <!-- CDN para VUE  -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
+
+
 
 <body>
   <!-- HEADER -->
@@ -40,7 +55,7 @@
       <ul class="n-bar">
         <li class="n-item"><a href="/html/index.html">Inicio</a></li>
         <li class="n-item"><a href="/html/recetas.html">Recetas</a></li>
-        <li class="n-item"><a href="/html/bebidas.html">Bebidas</a></li>
+        <li class="n-item"><a href="">Bebidas</a></li>
         <li class="n-item"><a href="/html/news.html">Noticias</a></li>
         <li class="n-item"><a href="/html/form.html">Formulario</a></li>
       </ul>
@@ -52,35 +67,30 @@
     <section>
       <h2 id="main_title">Nuestras recetas</h2>
 
-      <!--Bootstrap-->
+      <!--Bootstrap carousel-->
       <section>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-              aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
-          </div>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="/img/comida4.jpg" class="d-block w-100" alt="comida1">
+              <img 
+              src="https://cdn.pixabay.com/photo/2020/05/30/01/07/platillo-5237281_960_720.png" 
+              class="d-block w-100" 
+              alt="comida1"
+              />
             </div>
             <div class="carousel-item">
-              <img src="/img/comida.jpg" class="d-block w-100" alt="comida2">
+              <img src="../img/comida2.jpg" class="d-block w-100" alt="comida2">
             </div>
             <div class="carousel-item">
-              <img src="/img/comida2.jpg" class="d-block w-100" alt="comida3">
+              <img src="../img/comida3.jpg" class="d-block w-100" alt="comida3">
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
+
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -122,47 +132,12 @@
       </section>
   </main>
   <hr>
-  <!-- FOOTER -->
-  <footer>
-    <article class="footer-container">
-      <article class="footer-content-container">
-        <h3 class="website-logo">Mesa12</h3>
-        <span class="footer-info">+54 011 1212 2121</span>
-        <span class="footer-info">Grupo12@Mesa12.com</span>
-      </article>
-
-      <article class="footer-menus">
-        <article class="footer-content-container">
-          <span class="menu-title">Navegation</span>
-          <a href="#top" class="menu-item-footer">Top</a>
-          <a href="index.html" class="menu-item-footer">Home</a>
-          <a href="recipe.html" class="menu-item-footer">Recipes</a>
-          <a href="drink.html" class="menu-item-footer">Drinks</a>
-          <a href="news.html" class="menu-item-footer">News</a>
-          <a href="form.html" class="menu-item-footer">Form</a>
-        </article>
-        <article class="footer-content-container">
-          <span class="menu-title">legal</span>
-          <a href="#" class="menu-item-footer">Privacy Policy</a>
-          <a href="#" class="menu-item-footer">Cookies</a>
-          <a href="#" class="menu-item-footer">Legal Advice</a>
-        </article>
-      </article>
-
-      <article class="footer-content-container">
-        <span class="menu-title">follow us</span>
-        <article class="social-container">
-          <a href="facebook.com" target="_blank" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-          <a href="instagram.com" target="_blank" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-          <a href="whatsapp.com" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="pinterest.com" target="_blank" class="social-link"><i class="fa-brands fa-pinterest"></i></a>
-        </article>
-      </article>
-    </article>
-    <article class="copyright-container">
-      <span class="copyright">Copyright 2021, itskrey.com. All rights reserved.</span>
-    </article>
-  </footer>
+<pie></pie>
+</section>
 </body>
 
 </html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="../js/app-toggle.js"></script>
+<script src="../js/headfoot.js"></script>
