@@ -10,17 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	// recuperamos el valor del parámetro "i"
 	const query = params.get('i') // "12345"
 	console.log(query);
-	
+
 	if (query != null) {
 		if (query < 20000) {
 			getInfoBebida(query);
-		} 
+		}
 		else {
 			getInfoReceta(query);
 		}
 	}
-	
-	
+
+
+
 
 });
 
@@ -54,12 +55,14 @@ async function getInfoReceta(query) {
 
 		console.log(ingredients);
 
-		for (let index = 0; index < 20; index++) {
-			const contenedorUl = document.querySelector('.list-ingredientes');
-			const elementoLi = document.createElement('li');
-			elementoLi.textContent = ingredients[20 + index] + ' ' + ' ' + ingredients[index]
-			contenedorUl.appendChild(elementoLi);
+		const contenedorUl = document.querySelector('.list-ingredientes');
 
+		for (let index = 0; index < 20; index++) {
+			if (ingredients[index] != null && ingredients[index] != "") {
+				const elementoLi = document.createElement('li');
+				elementoLi.textContent = ingredients[20 + index] + ' ' + ' ' + ingredients[index]
+				contenedorUl.appendChild(elementoLi);
+			}
 		}
 
 		// imagen de la receta
@@ -97,9 +100,9 @@ async function getInfoBebida(query) {
 
 		console.log(ingredients);
 		const contenedorUl = document.querySelector('.list-ingredientes');
-		
+
 		for (let index = 0; index < 15; index++) {
-			if (ingredients[index] != null) {
+			if (ingredients[index] != null && ingredients[index] != "") {
 				const elementoLi = document.createElement('li');
 				elementoLi.textContent = ingredients[15 + index] + ' ' + ' ' + ingredients[index]
 				contenedorUl.appendChild(elementoLi);
@@ -111,6 +114,25 @@ async function getInfoBebida(query) {
 			document.querySelectorAll('.img-receta')[index].setAttribute("src", datos.strDrinkThumb);
 		}
 	});
+}
+
+
+var btnDesplegar = document.querySelector('.btn-button');
+var seccion2 = document.querySelector('.container-div-info');
+console.log(btnDesplegar);
+console.log(seccion2);
+function desplegar() {
+	var btnDesplegar = document.querySelector('.btn-button');
+	var seccion2 = document.querySelector('.container-div-info');
+	console.log(btnDesplegar);
+	console.log(seccion2);
+	if (seccion2.style.height === 'auto') {
+		seccion2.style.height = '387px';
+		btnDesplegar.textContent = '↓';
+	} else {
+		seccion2.style.height = 'auto';
+		btnDesplegar.textContent = '↑';
+	}
 }
 
 
