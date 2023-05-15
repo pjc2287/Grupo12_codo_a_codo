@@ -1,41 +1,48 @@
-const mealContainer = document.getElementById('contenedor-imagenes');
-
-// URL de la API de TheMealDB para obtener comidas aleatorias
-const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
-
-// Función para mostrar la información de una comida en el HTML
-function mostrarComida(comida) {
+document.addEventListener('DOMContentLoaded', () => {
+  getListaDeCard();
   
-  mealSection.classList.add('meal');
+});
 
-  const mealImg = document.getElementsById('imagen');
-  mealImg.src = comida.strMealThumb;
+const cardComida = (imagen, nombre, id) => {
+  return `
+    <section id="contenedor-imagenes">
+      <a href="/html/dataReceta.html?i=${id}">
+        <img class="imagen" src=${imagen}>
+      </a>
+      <a href="/html/dataReceta.html?i=${id}">
+        <h3 class="descripcion">${nombre}</h3>
+      </a>
+    </section>
+  `;
+};
 
-  const mealName = document.getElementsById('descripcion');
-  mealName.textContent = comida.strMeal;
+async function obtenerComidasAleatorias() {
+  const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
+  const response = await fetch(url);
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  const meal = data.meal;
+  console.log(meal);
+  const resultados = [];
 
-  mealDiv.appendChild(mealImg);
-  mealDiv.appendChild(mealName);
-
-  mealContainer.appendChild(mealDiv);
-}
-
-// Hacer múltiples solicitudes a la API para obtener varias comidas aleatorias
-// Número de comidas a mostrar
-function listaRandom () {
   for (let i = 0; i < 12; i++) {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log (data)
-        const comida = data.meals[0];
-        mostrarComida(comida);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+      const respuesta = await fetch(url);
+      const datos = await respuesta.json();
+      const meal = datos.meals[0];
+      resultados.push(meal);
   }
+
+  return resultados;
 }
 
-listaRandom ()
-console.log (listaRandom())
+async function getListaDeCard() {
+  const listComida = await obtenerComidasAleatorias();
+  console.log(listComida);
+  const contenedor = document.getElementById('general');
+  //console.log(listBebidas);
+  listComida.forEach(elemento => {
+      const contenidoHTML = cardComida(elemento.strMealThumb, elemento.strMeal, elemento.idMeal);
+      contenedor.innerHTML += contenidoHTML;
+  });
+}
