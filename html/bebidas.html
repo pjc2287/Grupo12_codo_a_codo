@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,36 +17,33 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
 
+	<!-- CDN de VUE para importar header y footer de headfoot.js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
-
-	<!-- CDN para VUE  -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
 </head>
 
 <body>
 	<section id="app">
 	<encabezado></encabezado>
-	<hr>
-	<!-- contenedor -->
-    <main id="general">
-
-    </main>
-    <hr>
-    
-    <pie></pie>
-	</main>
+	
+	<!-- api -->
 	<hr>
 	
+	<main id="main">
+	</main>
+	<hr>
+
+	<!-- footer -->
 	<pie></pie>
 </section>
 
 </body>
-
+<script src="/js/bebida.js"></script>
 </html>
 
-<script src="../js/headfoot.js"></script>
 <script src="../js/app-toggle.js"></script>
-<script src="../js/listarecetas.js"></script>
+
+<script src="../js/headfoot.js"></script>

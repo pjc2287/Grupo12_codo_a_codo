@@ -1,19 +1,16 @@
-
-
-
-//Cantida de noticias que se cargaran cada vez que se presione siguiente (5 + 1)
+//Cantida de noticias que se cargaran por llamada (5 + 1)
 let cantidadNoticias = 5;
 let pageFinal = cantidadNoticias;
 let pageInicial = 0;
-let temaActual = "Comida";
+let temaActual = "Comida"; //primer item en la barra de busqueda
 
 let noticias = {
-    "apiKey":"e0f349624f9949d8a1736438dfcca047",
+    "apiKey":"e0f349624f9949d8a1736438dfcca047", //registrado en la api
     fetchNoticias:function(categoria){
         fetch(
             "https://newsapi.org/v2/everything?q="
             +categoria+
-            "&languaje=es&apiKey="+this.apiKey
+            "&languaje=es&apiKey="+this.apiKey //lenguaje ES español
         )
         .then((response)=>response.json())
         .then((data)=>this.displayNoticias(data));
@@ -34,7 +31,7 @@ let noticias = {
             let img = document.createElement("img");
             img.setAttribute("src", urlToImage);
             img.className = "pic"
-            let info_item = document.createElement("div");
+            let info_item = document.createElement("article");
             info_item.className = "info_item";
             const {publishedAt} = data.articles[i];
             let fecha = document.createElement("span");
@@ -62,13 +59,7 @@ let noticias = {
             document.querySelector(".container-noticias").appendChild(item);
         }
 
-        // "ver mas" trae noticias muy alejadas de lo que se pide 
- 
-        // let btnSiguiente = document.createElement("span");
-        // btnSiguiente.id = "btnSiguiente";
-        // btnSiguiente.textContent = "Ver más";
-        // btnSiguiente.setAttribute("onclick","siguiente()");
-        // document.querySelector(".container-noticias").appendChild(btnSiguiente);
+        
     }
 }
 
@@ -81,22 +72,6 @@ function buscar(cat){
     noticias.fetchNoticias(cat);
 }
 
-function buscarTema(){
-    pageInicial = 0;
-    pageFinal = cantidadNoticias;
 
-    let tema = document.querySelector("#busqueda").value;
-    temaActual = tema;
-    noticias.fetchNoticias(temaActual);
-}
-
-function siguiente(){
-    pageInicial = pageFinal + 1;
-    pageFinal = pageFinal + cantidadNoticias + 1;
-    //eliminamos el botón siguiente
-    document.querySelector("#btnSiguiente").remove();
-    noticias.fetchNoticias(temaActual);
-
-}
 
 noticias.fetchNoticias(temaActual);

@@ -208,6 +208,28 @@ main section {
     background-color: #f7f4d2;
 }
 
+@media (max-width: 480px) {
+    .carousel-item img {
+        height: 200px; 
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .carousel-item img {
+        height: 350px; 
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .carousel-item img {
+        height: 350px; 
+        max-width:1160px;
+        margin: 0 auto;
+    }
+}
+
 #main_title {
     margin: 1rem 0;
     text-align: center;
