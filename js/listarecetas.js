@@ -46,3 +46,9 @@ async function getListaDeCard() {
       contenedor.innerHTML += contenidoHTML;
   });
 }
+
+
+const btnListCard = document.querySelector('.btn-listCard');
+btnListCard.addEventListener('click', () => {
+  getListaDeCard();
+});
