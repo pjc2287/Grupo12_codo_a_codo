@@ -43,14 +43,13 @@ async function obtenerBebidasAleatorias() {
 async function getListaDeCard() {
     const listBebidas = await obtenerBebidasAleatorias();
     console.log(listBebidas);
-    const contenedor = document.getElementById('main');
+    const contenedor = document.querySelector('.conteiner-listCard');
     //console.log(listBebidas);
     listBebidas.forEach(elemento => {
         const contenidoHTML = cardBebida(elemento.strDrinkThumb, elemento.strDrink, elemento.idDrink);
         contenedor.innerHTML += contenidoHTML;
     });
 }
-
 
 
 

@@ -124,7 +124,6 @@ async function getInfoBebida(query) {
 
 		// Parrafo de presentacion
 		document.querySelector('.parrafo-seccion1').textContent = "xxxxxxxxxxxxxxxxxxxxxx";
-
 	});
 }
 

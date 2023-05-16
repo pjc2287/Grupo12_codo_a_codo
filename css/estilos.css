@@ -213,7 +213,20 @@ nav .n-bar .n-item {
   h1{
     margin-top: 1rem;
   }
+
+  .btn-listCard{
+    width: 15%;
+    border: solid black;
+    background-color: #ff9a00;
+    font-size: 150%;
+
+  }
   
+  .titulo-main{
+    font-size: 270%;
+    font-family: 'Delicious Handrawn', cursive;
+    margin: 3%;
+  }
 
   #contenedor-imagenes {
     display: inline-flex;
