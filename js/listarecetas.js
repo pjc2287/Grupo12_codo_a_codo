@@ -26,7 +26,7 @@ async function obtenerComidasAleatorias() {
   console.log(meal);
   const resultados = [];
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 20; i++) {
       const respuesta = await fetch(url);
       const datos = await respuesta.json();
       const meal = datos.meals[0];
@@ -46,3 +46,9 @@ async function getListaDeCard() {
       contenedor.innerHTML += contenidoHTML;
   });
 }
+
+
+const btnListCard = document.querySelector('.btn-listCard');
+btnListCard.addEventListener('click', () => {
+  getListaDeCard();
+});

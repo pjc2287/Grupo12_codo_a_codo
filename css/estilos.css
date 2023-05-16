@@ -257,18 +257,28 @@ nav .n-bar .n-item{
     font-family: 'Delicious Handrawn', cursive;
     
   }
-  h1{
+  .tit{
     margin-top: 1rem;
+    text-align: center;
+    font-family:'Delicious Handrawn', cursive;
+    font-size: 300%;
   }
 
   .btn-listCard{
     width: 15%;
-    border: solid black;
+    border: solid black 2px;
     background-color: #ff9a00;
     font-size: 150%;
-
+    display: flex ;
+    justify-content: center;
+    margin:auto;
+    border-radius:1rem; 
+    font-family: 'roboto'
   }
-  
+  .btn-listCard:hover {
+    box-shadow: 0 0 20px black;
+  }
+
   .titulo-main{
     font-size: 270%;
     font-family: 'Delicious Handrawn', cursive;
