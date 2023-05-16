@@ -309,8 +309,9 @@ nav .n-bar .n-item{
   justify-content: center;
   color: var(--colorFont);
   width: 100%;
-  height: 450px;
-  font-size: x-large;
+  height: 350px;
+  padding: var(--paddingSections);
+  
 }
 .title-main{
   background-color: var(--colorPrimario);
@@ -318,11 +319,13 @@ nav .n-bar .n-item{
   font-family: var(--fontFamilyTitle);
   font-size: var(--sizeFontTitle);
   font-weight: var(--weightFontTitle);
+  margin-bottom: 20px;
 }
 .sub-main{
   font-family: var(--fontFamilySub);
   font-size: var(--sizeFontSub);
   font-weight: var(--weightFontSub);
+  margin-bottom: 20px;
 }
 
 

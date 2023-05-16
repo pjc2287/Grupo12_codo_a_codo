@@ -282,7 +282,7 @@ nav .n-bar .n-item{
 
 .header-item{
   width: 100%;
-  height: 450px;
+  height: 350px;
   
   background-image: url(/img/wintery-sunburst.svg);
   background-position: center;
@@ -294,8 +294,8 @@ nav .n-bar .n-item{
   position: relative;
   flex-direction: column;
   align-items: center;
-  /* justify-content: space-around; */
-  margin-bottom: 100px;
+  justify-content: center;
+  
 }
 
 .tittle-pg{
