@@ -33,12 +33,15 @@ async function getInfoReceta(query) {
 	console.log(data);
 	data.meals.forEach(datos => {
 
+		// Parrafo de presentacion
+		document.querySelector('.parrafo-seccion1').innerHTML = "The "+datos.strMeal+" is a traditional dish from "+datos.strArea+", it was created by a professional chef "+datos.strArea+"; You can visit his website and see more of his recipes at <a href= "+datos.strSource+">WebSite</a>."+" You can also see the complete preparation on <a href="+datos.strYoutube+">YouTube</a>.";
+
 		//nombre de la receta
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
 			let nombReceta = document.querySelectorAll('.nomb-receta')[index].textContent = datos.strMeal;
 			//traductor(nombReceta);
 		}
-
+		
 		// preparacion de la receta
 		//let descripcion = traductor(datos.strInstructions);
 		//console.log(descripcion);
@@ -70,6 +73,8 @@ async function getInfoReceta(query) {
 			document.querySelectorAll('.img-receta')[index].setAttribute("src", datos.strMealThumb);
 		}
 
+		// Parrafo de presentacion
+		document.querySelector('.parrafo-seccion1').textContent = datos.strInstructions;
 
 	});
 }
@@ -113,19 +118,17 @@ async function getInfoBebida(query) {
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
 			document.querySelectorAll('.img-receta')[index].setAttribute("src", datos.strDrinkThumb);
 		}
+
+		// Parrafo de presentacion
+		document.querySelector('.parrafo-seccion1').textContent = "xxxxxxxxxxxxxxxxxxxxxx";
+
 	});
 }
 
-
-var btnDesplegar = document.querySelector('.btn-button');
-var seccion2 = document.querySelector('.container-div-info');
-console.log(btnDesplegar);
-console.log(seccion2);
 function desplegar() {
 	var btnDesplegar = document.querySelector('.btn-button');
 	var seccion2 = document.querySelector('.container-div-info');
-	console.log(btnDesplegar);
-	console.log(seccion2);
+
 	if (seccion2.style.height === 'auto') {
 		seccion2.style.height = '387px';
 		btnDesplegar.textContent = '↓';
