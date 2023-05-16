@@ -86,6 +86,9 @@ async function getInfoBebida(query) {
 	data.drinks.forEach(datos => {
 		console.log(datos);
 
+		// Parrafo de presentacion
+		document.querySelector('.parrafo-seccion1').innerHTML = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia et beatae doloremque perferendis laborum, inventore ea. Recusandae, inventore repellat sit in nemo sed est alias sunt unde? Numquam, modi incidunt!. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam laborum eaque doloremque consectetur nostrum. Culpa dolorem, consectetur deleniti omnis obcaecati quisquam dolor saepe repudiandae debitis, sit suscipit veniam porro ut.";
+
 		//nombre de la receta
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
 			let nombReceta = document.querySelectorAll('.nomb-receta')[index].textContent = datos.strDrink;
