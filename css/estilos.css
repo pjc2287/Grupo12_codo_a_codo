@@ -257,15 +257,17 @@ nav .n-bar .n-item{
     font-family: 'Delicious Handrawn', cursive;
     
   }
-  .tit{
+  .tit, .titulo-main{
     margin-top: 1rem;
     text-align: center;
     font-family:'Delicious Handrawn', cursive;
     font-size: 300%;
+    margin: 3%;
   }
 
   .btn-listCard{
-    width: 15%;
+    max-width: 100%;
+    padding: 0.5%;
     border: solid black 2px;
     background-color: #ff9a00;
     font-size: 150%;
@@ -273,16 +275,11 @@ nav .n-bar .n-item{
     justify-content: center;
     margin:auto;
     border-radius:1rem; 
-    font-family: 'roboto'
+    font-family: 'roboto';
+    margin-top: 2%;
   }
   .btn-listCard:hover {
     box-shadow: 0 0 20px black;
-  }
-
-  .titulo-main{
-    font-size: 270%;
-    font-family: 'Delicious Handrawn', cursive;
-    margin: 3%;
   }
 
   /* estilo loader*/

@@ -247,16 +247,32 @@ nav .n-bar .n-item {
 }
 
 #seccion-2 {
+  display: grid;
+}
+
+.container-div-info{
   display: flex;
   justify-content: space-around;
   background-color: rgba(222, 184, 135, 0.66);
   border: solid 3px black;
+
+  height: 387px;
+  overflow: hidden;
+}
+
+.btn-button{
+  padding: 0.5%;
+  background-color: rgba(222, 184, 135, 0.66);
+  font-family: 'DynaPuff', cursive;
+  font-size: 150%;
+  border: solid black;
+  margin-top: 0.5%;
 }
 
 .seccion2-divIngredientes{
   padding: 1%;
   margin: 1%;
-  
+
 }
 
 .seccion2-divIngredientes h2{
@@ -287,7 +303,6 @@ nav .n-bar .n-item {
   font-size: 140%;
   font-family: 'Roboto Serif', serif;
 }
-
 
 /*movil responsive*/
 @media (max-width: 480px) {

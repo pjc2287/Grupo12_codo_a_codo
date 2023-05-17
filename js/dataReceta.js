@@ -32,6 +32,9 @@ async function getInfoReceta(query) {
 	console.log(data);
 	data.meals.forEach(datos => {
 
+		// Parrafo de presentacion
+        document.querySelector('.parrafo-seccion1').innerHTML = "The "+datos.strMeal+" is a traditional dish from "+datos.strArea+", it was created by a professional chef "+datos.strArea+"; You can visit his website and see more of his recipes at <a href= "+datos.strSource+">WebSite</a>."+" You can also see the complete preparation on <a href="+datos.strYoutube+">YouTube</a>.";
+
 		//nombre de la receta
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
 			let nombReceta = document.querySelectorAll('.nomb-receta')[index].textContent = datos.strMeal;
@@ -44,23 +47,21 @@ async function getInfoReceta(query) {
 		document.querySelector('.preparacion-receta').textContent = datos.strInstructions;
 
 		//lista de los ingredientes de la receta
-
-		const ingredients = [];
-		for (const key in datos) {
-			if (key.includes("strIngredient") || key.includes("strMeasure")) {
-				ingredients.push(datos[key]);
-			}
-		}
-
-		console.log(ingredients);
-
-		for (let index = 0; index < 20; index++) {
-			const contenedorUl = document.querySelector('.list-ingredientes');
-			const elementoLi = document.createElement('li');
-			elementoLi.textContent = ingredients[20 + index] + ' ' + ' ' + ingredients[index]
-			contenedorUl.appendChild(elementoLi);
-
-		}
+        const ingredients = [];
+        for (const key in datos) {
+            if (key.includes("strIngredient") || key.includes("strMeasure")) {
+                ingredients.push(datos[key]);
+            }
+        }
+        console.log(ingredients);
+        const contenedorUl = document.querySelector('.list-ingredientes');
+        for (let index = 0; index < 20; index++) {
+            if (ingredients[index] != null && ingredients[index] != "") {
+                const elementoLi = document.createElement('li');
+                elementoLi.textContent = ingredients[20 + index] + ' ' + ' ' + ingredients[index]
+                contenedorUl.appendChild(elementoLi);
+            }
+        }
 
 		// imagen de la receta
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
@@ -77,6 +78,9 @@ async function getInfoBebida(query) {
 	const data = await response.json();    //guarda los datos que devuelve el endpoint y los trasforma en json
 	data.drinks.forEach(datos => {
 		console.log(datos);
+
+		// Parrafo de presentacion
+        document.querySelector('.parrafo-seccion1').innerHTML = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis vero consequuntur veniam cupiditate omnis qui corrupti reprehenderit sint magni, blanditiis, iste dolorum consectetur? Voluptas deserunt maiores voluptatum ad temporibus velit!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam molestiae aperiam alias nostrum maxime rem molestias voluptatibus temporibus. Perspiciatis, veritatis. Ad asperiores exercitationem minus doloremque, soluta alias hic illum officia.";
 
 		//nombre de la receta
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
@@ -111,6 +115,19 @@ async function getInfoBebida(query) {
 			document.querySelectorAll('.img-receta')[index].setAttribute("src", datos.strDrinkThumb);
 		}
 	});
+}
+
+function desplegar() {
+    var btnDesplegar = document.querySelector('.btn-button');
+    var seccion2 = document.querySelector('.container-div-info');
+
+    if (seccion2.style.height === 'auto') {
+        seccion2.style.height = '387px';
+        btnDesplegar.textContent = '↓';
+    } else {
+        seccion2.style.height = 'auto';
+        btnDesplegar.textContent = '↑';
+    }
 }
 
 
