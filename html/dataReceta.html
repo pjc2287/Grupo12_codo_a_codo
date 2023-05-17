@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,19 +17,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap" rel="stylesheet">
 
-
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
+
     <!-- CDN de VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
 </head>
-
 <body>
     <section id="app">
+    <!-- Header -->
     <encabezado></encabezado>
+    
+    <!-- Main -->
     <hr>
-    <!-- MAIN -->
     <main id="main">
         <h2 class="nombre-receta"><span class="nomb-receta"></span></h2>
         <section id="seccion-1">
@@ -53,12 +52,14 @@
             </article>
             <button class="btn-button" onclick="desplegar()">↓</button>
         </section>
-        
     </main>
     <hr>
+
+	<!-- Footer -->
     <pie></pie>
 </section>
 </body>
+<!-- JavaScript -->
 <script src="/js/dataReceta.js"></script>
 <script src="../js/headfoot.js"></script>
 <script src="../js/app-toggle.js"></script>

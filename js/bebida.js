@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
+// contiene el contenido html de una card la transforme en componente para enviarle datos por parametros y replicarla un numero de veces e insertarlas en un contenedor
 const cardBebida = (imagen, nombre, id) => {
     return `
     <section id="contenedor-imagenes">
@@ -18,7 +18,7 @@ const cardBebida = (imagen, nombre, id) => {
     `
 }
 
-
+// esta funcion me retorna un Array de 12 bebidas(premisa). le pego al endpoin(random) de la API 12 veces ya que solo te trae uno solo al azar
 async function obtenerBebidasAleatorias() {
     const url = 'http://www.thecocktaildb.com/api/json/v1/1/random.php';
     const response = await fetch(url);
@@ -39,25 +39,25 @@ async function obtenerBebidasAleatorias() {
     return resultados;
 }
 
+
+// en esta funcion tomo el Array de la funcion anterior y completo con los datos de cada elemento la card cardBebida 12 veces y la inserto en un contenedor
 async function getListaDeCard() {
-    const listBebidas = await obtenerBebidasAleatorias();
     const contenedor = document.getElementById('conteiner-listCard');
     const loader = document.querySelector('.lds-ring');
-    /*loader.style.display = 'inline-block';
-    contenedor.append(loader);*/
+    loader.style.display = 'inline-block';
+    const listBebidas = await obtenerBebidasAleatorias();
     console.log(listBebidas);
+    if (listBebidas.length >= 12) {
+        listBebidas.forEach(elemento => {
+            const contenidoHTML = cardBebida(elemento.strDrinkThumb, elemento.strDrink, elemento.idDrink);
+            contenedor.innerHTML += contenidoHTML;
+        });
+    }
     loader.style.display = 'none';
-    listBebidas.forEach(elemento => {
-        const contenidoHTML = cardBebida(elemento.strDrinkThumb, elemento.strDrink, elemento.idDrink);
-        contenedor.innerHTML += contenidoHTML;
-    });
 }
 
+// al apretaar el boton de ver mas se cargan otras 12 cards
 const btnListCard = document.querySelector('.btn-listCard');
 function cargarListCard() {
     getListaDeCard();
 }
-
-
-
-  
