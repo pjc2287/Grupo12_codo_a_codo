@@ -1,6 +1,6 @@
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   getListaDeCard();
-  
+
 });
 
 const cardComida = (imagen, nombre, id) => {
@@ -26,26 +26,28 @@ async function obtenerComidasAleatorias() {
   const resultados = [];
 
   for (let i = 0; i < 20; i++) {
-      const respuesta = await fetch(url);
-      const datos = await respuesta.json();
-      const meal = datos.meals[0];
-      resultados.push(meal);
+    const respuesta = await fetch(url);
+    const datos = await respuesta.json();
+    const meal = datos.meals[0];
+    resultados.push(meal);
   }
 
   return resultados;
 }
 
 async function getListaDeCard() {
-  const listComida = await obtenerComidasAleatorias();
-  console.log(listComida);
   const contenedor = document.getElementById('general');
   const loader = document.querySelector('.lds-ring');
-  //console.log(listBebidas);
-  loader.style.display = 'none';
-  listComida.forEach(elemento => {
+  loader.style.display = 'inline-block';
+  const listComida = await obtenerComidasAleatorias();
+  console.log(listComida);
+  if (listComida.length >= 12) {
+    listComida.forEach(elemento => {
       const contenidoHTML = cardComida(elemento.strMealThumb, elemento.strMeal, elemento.idMeal);
       contenedor.innerHTML += contenidoHTML;
-  });
+    });
+    loader.style.display = 'none';
+  }
 }
 
 
