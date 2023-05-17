@@ -23,7 +23,6 @@ async function obtenerComidasAleatorias() {
   const data = await response.json();
   console.log(data);
   const meal = data.meal;
-  console.log(meal);
   const resultados = [];
 
   for (let i = 0; i < 20; i++) {

@@ -2,15 +2,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 	// recuperamos el querystring
 	const querystring = window.location.search
-	//console.log(querystring) // '?i=12345'
+	/* ?i=1234 */
 
 	// usando el querystring, creamos un objeto del tipo URLSearchParams
 	const params = new URLSearchParams(querystring)
 
-	// recuperamos el valor del parámetro "i"
-	const query = params.get('i') // "12345"
+	/* recuperamos el valor del parámetro "i" */
+	const query = params.get('i') 
+	/* "12345" */
+
 	console.log(query);
-	
+	//chequeo si el id de la query params en menor que 20000 es una bebida si no es una receta 
 	if (query != null) {
 		if (query < 20000) {
 			getInfoBebida(query);
@@ -19,16 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			getInfoReceta(query);
 		}
 	}
-	
-	
-
 });
 
-
+/* esta funcion trae informacion de la API de receta y la inserta en dataReceta.html. recibe un id por query params para buscar una receta en la API*/
 async function getInfoReceta(query) {
 	var url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${query}`;
 	const response = await fetch(url);     // se conecta al endpoint con la url
-	const data = await response.json();    //guarda los datos que devuelve el endpoint y los trasforma en json
+	const data = await response.json();    //guarda los datos(premisa) que devuelve el endpoint y los trasforma en json
 	console.log(data);
 	data.meals.forEach(datos => {
 
@@ -53,6 +52,7 @@ async function getInfoReceta(query) {
                 ingredients.push(datos[key]);
             }
         }
+
         console.log(ingredients);
         const contenedorUl = document.querySelector('.list-ingredientes');
         for (let index = 0; index < 20; index++) {
@@ -67,15 +67,14 @@ async function getInfoReceta(query) {
 		for (let index = 0; index < document.querySelectorAll('.nomb-receta').length; index++) {
 			document.querySelectorAll('.img-receta')[index].setAttribute("src", datos.strMealThumb);
 		}
-
-
 	});
 }
 
+/* esta funcion trae informacion de la API de bebidas y la inserta en dataReceta.html. recibe un id por query params para buscar una bebida en la API*/
 async function getInfoBebida(query) {
 	var url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${query}`;
 	const response = await fetch(url);     // se conecta al endpoint con la url
-	const data = await response.json();    //guarda los datos que devuelve el endpoint y los trasforma en json
+	const data = await response.json();    //guarda los datos(premisa) que devuelve el endpoint y los trasforma en json
 	data.drinks.forEach(datos => {
 		console.log(datos);
 
@@ -101,7 +100,6 @@ async function getInfoBebida(query) {
 
 		console.log(ingredients);
 		const contenedorUl = document.querySelector('.list-ingredientes');
-		
 		for (let index = 0; index < 15; index++) {
 			if (ingredients[index] != null) {
 				const elementoLi = document.createElement('li');
@@ -117,6 +115,7 @@ async function getInfoBebida(query) {
 	});
 }
 
+/* esta funcion despliega el contenedor que contiene los ingredientes y la preparacion de dataRecetas.html  */
 function desplegar() {
     var btnDesplegar = document.querySelector('.btn-button');
     var seccion2 = document.querySelector('.container-div-info');

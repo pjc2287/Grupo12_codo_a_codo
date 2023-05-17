@@ -20,23 +20,21 @@
 	<!-- CDN de VUE para importar header y footer de headfoot.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 	<section id="app">
+	<!-- Header -->
 	<encabezado></encabezado>
 	
-	<!-- api -->
+	<!-- Maain -->
 	<hr>
-	
 	<main id="main">
 		<h2 class="titulo-main">Las mejores Bebidas de Mesa 12</h2>
 		<section id="conteiner-listCard">
-			<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 		</section>
+		<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
 		<button class="btn-listCard" onclick="cargarListCard()">Ver más</button>
 	</main>
 	<hr>
@@ -44,11 +42,9 @@
 	<!-- footer -->
 	<pie></pie>
 </section>
-
 </body>
+<!-- JavaScript -->
 <script src="/js/bebida.js"></script>
-</html>
-
 <script src="../js/app-toggle.js"></script>
-
 <script src="../js/headfoot.js"></script>
+</html>
