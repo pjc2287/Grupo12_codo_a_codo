@@ -39,16 +39,20 @@ async function obtenerBebidasAleatorias() {
     return resultados;
 }
 
-
 async function getListaDeCard() {
     const listBebidas = await obtenerBebidasAleatorias();
-    console.log(listBebidas);
     const contenedor = document.querySelector('.conteiner-listCard');
-    //console.log(listBebidas);
-    listBebidas.forEach(elemento => {
-        const contenidoHTML = cardBebida(elemento.strDrinkThumb, elemento.strDrink, elemento.idDrink);
-        contenedor.innerHTML += contenidoHTML;
-    });
+    const loader = document.querySelector('.lds-ring');
+    /*loader.style.display = 'inline-block';
+    contenedor.append(loader);*/
+    console.log(listBebidas);
+    if (listBebidas.length >= 12) {
+        loader.style.display = 'none';
+        listBebidas.forEach(elemento => {
+            const contenidoHTML = cardBebida(elemento.strDrinkThumb, elemento.strDrink, elemento.idDrink);
+            contenedor.innerHTML += contenidoHTML;
+        });
+    } 
 }
 
 
