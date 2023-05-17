@@ -40,7 +40,9 @@ async function getListaDeCard() {
   const listComida = await obtenerComidasAleatorias();
   console.log(listComida);
   const contenedor = document.getElementById('general');
+  const loader = document.querySelector('.lds-ring');
   //console.log(listBebidas);
+  loader.style.display = 'none';
   listComida.forEach(elemento => {
       const contenidoHTML = cardComida(elemento.strMealThumb, elemento.strMeal, elemento.idMeal);
       contenedor.innerHTML += contenidoHTML;
