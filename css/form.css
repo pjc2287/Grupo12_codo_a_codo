@@ -463,8 +463,11 @@ button:active {
 }
 
 .mensajeCorrecto {
+  font-family: var(--fontFamilyP);
+  font-size: var(--sizeFontPBg);
   text-align: center;
-  font-weight: bold;
+  font-weight: var(--weightFontP);
+  color: var(--colorTercero);
 }
 
 @media screen and (max-width: 912px) {
