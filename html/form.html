@@ -1,137 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto | Mesa12</title>
     <!-- Icono en pestaña -->
-    <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="../img/ico/utensils-solid.ico"
+      type="image/x-icon"
+    />
     <!-- pagina de estilos -->
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="../css/form.css" />
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cc691913f8.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- CDN de VUE para importar header y footer de headfoot.js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
+
     <!--Google Fonts en el css con @import  -->
-</head>
-<body>
+  </head>
+  <body>
     <!-- section en el js. -->
     <section id="app">
-        
-    <!-- <encabezado> en el js para traer header -->
+      <!-- <encabezado> en el js para traer header -->
       <header>
         <encabezado></encabezado>
       </header>
-    
-    
+
       <!-- FORMULARIO -->
       <!-- Titulo, texto a la izquierda y form, responsive -->
       <main>
-    <section id="top" class="container">
-        <article class="text-main-u">
+        <section id="top" class="container">
+          <article class="text-main-u">
             <h2 class="title-main">Contacto</h2>
-            <p class="sub-main">Convertite en un colaborador con tus mensajes y recetas</p>
-        </article>
-        <article class="info">
-            <h2>Queremos escucharte</H2>
-                <iframe class="iframe-info" src="https://www.youtube.com/embed/tJlzIJaokVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>   
+            <p class="sub-main">
+              Convertite en un colaborador con tus mensajes y recetas
+            </p>
+          </article>
+          <article class="info">
+            <h2>Queremos escucharte</h2>
+            <iframe
+              class="iframe-info"
+              src="https://www.youtube.com/embed/tJlzIJaokVY"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
             <h3>Por favor complete el formulario</h3>
-            <p>Con tu ayuda queremos expandir nuestra oferta y convertirnos juntos en una red de ayuda para la cocina de todo el mundo. <br> Si tienes alguna duda de como cargar tus recetas no dudes en consultar nuestra sección de FAQ. </p>
+            <p>
+              Con tu ayuda queremos expandir nuestra oferta y convertirnos
+              juntos en una red de ayuda para la cocina de todo el mundo. <br />
+              Si tienes alguna duda de como cargar tus recetas no dudes en
+              consultar nuestra sección de FAQ.
+            </p>
             <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque sed, molestiae incidunt dolores sit ea!</p> -->
             <h3>Gracias!!!</h3>
-        </article>
-        <article class="form">
+          </article>
+          <article class="form">
             <form action="" class="form" id="form" autocomplete="off">
-                <p class="form-titulo">Contacto</p>
-                <ul>
-                  <li class="form-input nombre">
-                    <input type="text" id="nombre">
-                    <label for="nombre">Nombre</label>
-                    <p class="mensajeError"></p>
-                  </li>
-                  <li class="form-input apellido">
-                    <input type="text" id="apellido">
-                    <label for="apellido">Apellidos</label>
-                    <p class="mensajeError"></p>
-                  </li>
-                  <li class="form-input email">
-                    <input type="email" id="email">
-                    <label for="email">Correo electrónico</label>
-                    <p class="mensajeError"></p>
-                  </li>
-                  <li class="form-input celular">
-                    <input type="text" id="celular">
-                    <label for="celular">Celular</label>
-                    <p class="mensajeError"></p>
-                  </li>
-                  <li class="form-input textarea">
-                    <textarea name="textarea" id="textarea" cols="40" rows="10" placeholder="Escribe tu receta o comentario aqui.."></textarea>
-                    <p class="mensajeError"></p>
-                  </li>
-                </ul>
-                
-                <article class="form-termsAndConditions termsAndConditions">
-                  <input type="checkbox" id="termsAndConditions">
-                  <label class="labelTerms" for="termsAndConditions">He leído y acepto los </label>
-                  <a class="labelTerms" href="#">Términos y Condiciones</a>
+              <p class="form-titulo">Contacto</p>
+              <ul>
+                <li class="form-input nombre">
+                  <input type="text" id="nombre" />
+                  <label for="nombre">Nombre</label>
                   <p class="mensajeError"></p>
-                </article>
-          
-                <button class="form-boton" type="submit" value="Enviar">
-                  <span>Enviar</span>
-                </button>
-                <p class="mensajeCorrecto"></p>
-              </form>
-        </article>
-    </section>
+                </li>
+                <li class="form-input apellido">
+                  <input type="text" id="apellido" />
+                  <label for="apellido">Apellidos</label>
+                  <p class="mensajeError"></p>
+                </li>
+                <li class="form-input email">
+                  <input type="email" id="email" />
+                  <label for="email">Correo electrónico</label>
+                  <p class="mensajeError"></p>
+                </li>
+                <li class="form-input celular">
+                  <input type="text" id="celular" />
+                  <label for="celular">Celular</label>
+                  <p class="mensajeError"></p>
+                </li>
+                <li class="form-input textarea">
+                  <textarea
+                    name="textarea"
+                    id="textarea"
+                    cols="40"
+                    rows="10"
+                    placeholder="Escribe tu receta o comentario aqui.."
+                  ></textarea>
+                  <p class="mensajeError"></p>
+                </li>
+              </ul>
 
-    <!-- FAQ --> 
-    
-    <section class="container-faq">
-        <article class="title-faq">
+              <article class="form-termsAndConditions termsAndConditions">
+                <input type="checkbox" id="termsAndConditions" />
+                <label class="labelTerms" for="termsAndConditions"
+                  >He leído y acepto los
+                </label>
+                <a class="labelTerms" href="#">Términos y Condiciones</a>
+                <p class="mensajeError"></p>
+              </article>
+
+              <button class="form-boton" type="submit" value="Enviar">
+                <span>Enviar</span>
+              </button>
+              <p class="mensajeCorrecto"></p>
+            </form>
+          </article>
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="container-faq">
+          <article class="title-faq">
             <h2 class="intro-faq">F.A.Q.</h2>
             <p class="sub-faq">Lorem ipsum dolor sit amet.</p>
-        </article>
-        
-        
-        <ul id="accordion">
+          </article>
+
+          <ul id="accordion">
             <li>
-                <label for="first">Que puedes buscar en Mesa12 ? <span>&#x3e;</span></label>
-                <input type="radio" name="accordion" id="first" checked>
-                <article class="content">
-                    <p class="accordion-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos dolor nobis vitae, fugiat reprehenderit facilis doloribus sunt iste minima, eum alias voluptatibus saepe itaque sit aliquid qui accusantium delectus?</p>
-                </article>
+              <label for="first"
+                >Que puedes buscar en Mesa12 ? <span>&#x3e;</span></label
+              >
+              <input type="radio" name="accordion" id="first" checked />
+              <article class="content">
+                <p class="accordion-p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  quos dolor nobis vitae, fugiat reprehenderit facilis doloribus
+                  sunt iste minima, eum alias voluptatibus saepe itaque sit
+                  aliquid qui accusantium delectus?
+                </p>
+              </article>
             </li>
             <li>
-                <label for="second">Como buscar recetas ? <span>&#x3e;</span></label>
-                <input type="radio" name="accordion" id="second">
-                <article class="content">
-                    <p class="accordion-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos dolor nobis vitae, fugiat reprehenderit facilis doloribus sunt iste minima, eum alias voluptatibus saepe itaque sit aliquid qui accusantium delectus?</p>
-                </article>
+              <label for="second"
+                >Como buscar recetas ? <span>&#x3e;</span></label
+              >
+              <input type="radio" name="accordion" id="second" />
+              <article class="content">
+                <p class="accordion-p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  quos dolor nobis vitae, fugiat reprehenderit facilis doloribus
+                  sunt iste minima, eum alias voluptatibus saepe itaque sit
+                  aliquid qui accusantium delectus?
+                </p>
+              </article>
             </li>
             <li>
-                <label for="third">Como enviar recetas ? <span>&#x3e;</span></label>
-                <input type="radio" name="accordion" id="third">
-                <article class="content">
-                    <p class="accordion-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quos dolor nobis vitae, fugiat reprehenderit facilis doloribus sunt iste minima, eum alias voluptatibus saepe itaque sit aliquid qui accusantium delectus?</p>
-                </article>
+              <label for="third"
+                >Como enviar recetas ? <span>&#x3e;</span></label
+              >
+              <input type="radio" name="accordion" id="third" />
+              <article class="content">
+                <p class="accordion-p">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  quos dolor nobis vitae, fugiat reprehenderit facilis doloribus
+                  sunt iste minima, eum alias voluptatibus saepe itaque sit
+                  aliquid qui accusantium delectus?
+                </p>
+              </article>
             </li>
-        </ul>
-    </section>
-  </main>
-    <!-- <pie> en el js para importar footer  -->
+          </ul>
+        </section>
+      </main>
+      <!-- <pie> en el js para importar footer  -->
       <footer>
         <pie></pie>
       </footer>
-      
-    
     </section>
-</body>
+  </body>
 </html>
 
-    
 <!-- js -->
 <!-- funcion para menu de hamburguesa -->
 <script src="../js/app-toggle.js"></script>
@@ -141,7 +185,3 @@
 
 <!-- funcion para importar header y footer con headfoot.js y VUE -->
 <script src="../js/headfoot.js"></script>
-
-
-
-
