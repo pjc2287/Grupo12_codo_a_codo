@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   getListaDeCard();
 
 });
-
+//establece los datos que contiene cardComida y donde deben ser insertados//
 const cardComida = (imagen, nombre, id) => {
   return `
     <section id="contenedor-imagenes">
@@ -15,7 +15,7 @@ const cardComida = (imagen, nombre, id) => {
     </section>
   `;
 };
-
+//obtiene datos de la API recetas aleatorias y los transforma en json//
 async function obtenerComidasAleatorias() {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php';
   const response = await fetch(url);
@@ -24,8 +24,8 @@ async function obtenerComidasAleatorias() {
   console.log(data);
   const meal = data.meal;
   const resultados = [];
-
-  for (let i = 0; i < 20; i++) {
+// le solicito 12 recetas aleatorias, espero datos y los pusheo a meal//
+  for (let i = 0; i < 12; i++) {
     const respuesta = await fetch(url);
     const datos = await respuesta.json();
     const meal = datos.meals[0];
@@ -34,7 +34,7 @@ async function obtenerComidasAleatorias() {
 
   return resultados;
 }
-
+//con los datos obtenidos, establezco donde se deben pegar los mismos. Tambien se establece un loader mientras se cargan las recetas//
 async function getListaDeCard() {
   const contenedor = document.getElementById('general');
   const loader = document.querySelector('.lds-ring');
@@ -49,7 +49,7 @@ async function getListaDeCard() {
     loader.style.display = 'none';
   }
 }
-
+//en caso de que el usuario haga clic en btn ver más, se vuelve a ejecutar la funcion getListaDeCard//
 
 const btnListCard = document.querySelector('.btn-listCard');
 btnListCard.addEventListener('click', () => {
