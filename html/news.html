@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noticias | Mesa12</title>
     <!-- Icono en pestaña -->
-    <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="../img/ico/utensils-solid.ico"
+      type="image/x-icon"
+    />
     <!-- Css estilos -->
-    <link rel="stylesheet" href="../css/news.css">
+    <link rel="stylesheet" href="../css/news.css" />
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cc691913f8.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- CDN para VUE  -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!--Google Fonts en el css con @import  -->
-</head>
-<body>
+  </head>
+  <body>
     <section id="app">
-        <header>
-            <encabezado></encabezado>
-        </header>
-        
+      <header>
+        <encabezado></encabezado>
+      </header>
 
-
-<!-- NEWS APPI -->
-    <main>
-    <section id="top" class="container-news">
-        <article class="header-item">
+      <!-- NEWS APPI -->
+      <main>
+        <section id="top" class="container-news">
+          <article class="header-item">
             <h2 class="tittle-pg">Noticias</h2>
             <h3 class="sub-pg">Mantente actualizado con nosotros</h3>
-        </article>
+          </article>
 
-        <article>
+          <article>
             <nav class="search-item">
-                <span class="cat" onclick="buscar('Comida')">Comida</span>
-                <span class="cat" onclick="buscar('Restaurantes')">Restaurantes</span>
-                <span class="cat" onclick="buscar('Nutrición')">Nutrición</span>
-                <span class="cat" onclick="buscar('Celiacos')">Celíacos</span>
-                <span class="cat" onclick="buscar('Veganos')">Veganos</span>
+              <span class="cat" onclick="buscar('Comida')">Comida</span>
+              <span class="cat" onclick="buscar('Restaurantes')">Restaurantes</span>
+              <span class="cat" onclick="buscar('Nutrición')">Nutrición</span>
+              <span class="cat" onclick="buscar('Celiacos')">Celíacos</span>
+              <span class="cat" onclick="buscar('Veganos')">Veganos</span>
             </nav>
-        </article>
+          </article>
 
-        <article class="container-noticias"></article>
+          <article class="container-noticias"></article>
+        </section>
+      </main>
 
-    </section>
-    </main>
-
-    <footer>
+      <footer>
         <pie></pie>
-    </footer>
-        
+      </footer>
     </section>
-</body>
+  </body>
 </html>
 
 <!-- js -->
