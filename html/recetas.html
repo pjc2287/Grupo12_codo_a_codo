@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mesa 12</title>
 	<!-- Icono en pestaña -->
-    <link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../img/ico/utensils-solid.ico" type="image/x-icon">
 
 	<!-- Conexión al css -->
 	<link rel="stylesheet" href="/css/estilos.css">
@@ -23,27 +23,39 @@
 	<script src="https://kit.fontawesome.com/cc691913f8.js" crossorigin="anonymous"></script>
 
 	<!-- CDN para VUE  -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 </head>
 
 <body>
 	<section id="app">
-	<encabezado></encabezado>
-	<hr>
-	<!-- contenedor -->
+		<!-- Header -->
+		<header>
+			<encabezado></encabezado>
+		</header>
 
-	<main>
-		<h2 class="tit">Las mejores Comidas de Mesa 12</h2>
-		<section id="general">
-		</section>
-		<div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-		<button class="btn-listCard">Ver más</button>
-	</main>    
-    <hr>
-	
-   	<pie></pie>
-</section>
+
+		<hr>
+		<!-- contenedor -->
+		<main>
+			<h2 class="tit">Las mejores Comidas de Mesa 12</h2>
+			<section id="general">
+			</section>
+			<div class="lds-ring">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<button class="btn-listCard">Ver más</button>
+		</main>
+		<hr>
+
+		<!-- footer -->
+		<footer>
+			<pie></pie>
+		</footer>
+	</section>
 
 </body>
 
