@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const cardComida = (imagen, nombre, id) => {
   return `
     <section id="contenedor-imagenes">
-      <a href="/html/dataReceta.html?i=${id}">
+      <a href="dataReceta.html?i=${id}">
         <img class="imagen" src=${imagen}>
       </a>
-      <a href="/html/dataReceta.html?i=${id}">
+      <a href="dataReceta.html?i=${id}">
         <h3 class="descripcion">${nombre}</h3>
       </a>
     </section>
