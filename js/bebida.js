@@ -20,7 +20,7 @@ const cardBebida = (imagen, nombre, id) => {
 
 // esta funcion me retorna un Array de 12 bebidas(premisa). le pego al endpoin(random) de la API 12 veces ya que solo te trae uno solo al azar
 async function obtenerBebidasAleatorias() {
-    const url = 'http://www.thecocktaildb.com/api/json/v1/1/random.php';
+    const url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
     const response = await fetch(url);
     console.log(response);
     const data = await response.json();
